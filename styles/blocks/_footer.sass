@@ -1,0 +1,34 @@
+.footer
+  background-color: $base-body-color
+  font-size: 15px
+  color: white
+  +vertical-padding(2)
+
+.footer__container
+  +wrap
+
+.footer__text
+  font-family: $body-font-family
+  font-weight: 400
+
+.footer__list
+  display: flex
+  justify-content: center
+
+.footer__icon
+  fill: white
+  &:hover
+    fill: $raspberry
+
+.footer__link
+  color: white
+  font-family: $body-font-family
+  font-weight: 400
+  text-decoration: underline
+  margin: 0 3px
+  &:hover
+    text-decoration: none
+
+@media only screen and (min-width: 1000px)
+  .footer
+    +vertical-padding(4)

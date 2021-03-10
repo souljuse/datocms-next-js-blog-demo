@@ -1,0 +1,35 @@
+.search
+  display: inline-flex
+  border: 2px solid $base-body-color
+  border-radius: 3px
+  margin-bottom: $grid-gutter
+  font-family: $heading-font-family
+  font-weight: 400
+  max-width: 100%
+  justify-content: flex-end
+
+  input, select
+    position: relative
+    border: none
+    border-radius: 15px
+    background-color: #fff
+    padding: 0.7rem 1rem
+    width: 50%
+
+  button[type=submit]
+    border: none
+    flex: 1
+    border-left:  2px solid $base-body-color
+    border-radius: 0
+    cursor: pointer
+    background-color: $base-body-color
+    color: white
+    +font-size(smallprint)
+    &:hover
+      background-color: $raspberry
+      transition: $transition
+
+@media only screen and (min-width: 1000px)
+  .search
+    input, select
+      width: 60%

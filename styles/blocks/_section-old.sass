@@ -1,0 +1,76 @@
+.section-old
+  text-align: center
+  position: relative
+  background-color: white
+  +font-size(regular)
+  +vertical-padding(5)
+
+.section-old--small
+  @extend .section-old
+  +vertical-padding(4)
+
+.section-old__container
+  +wrap
+
+.section-old__title
+  +heading-font-family
+  max-width: 85%
+  margin: 0 auto
+  +margin-bottom(6)
+  +font-size(alpha)
+  font-weight: 700
+  position: relative
+
+.section-old__subtitle
+  +font-size(gamma)
+  font-weight: regular
+  +body-font-family
+  +margin-top(2)
+
+.section-old__title__element
+  +margin-top(3)
+
+.section-old__text
+  display: inline-block
+  +margin-bottom(2)
+  +font-size(regular)
+  font-weight: regular
+
+.section-old--gradient
+  @extend .section-old
+  &::before
+    content: ""
+    transform: skewY(4deg)
+    +position(absolute, 50px 0 0 0)
+    background: $light-gradient
+    height: 350px
+
+.section-old--primary
+  @extend .section-old
+  background: $light-blue-gradient
+
+.section-old--black
+  @extend .section-old
+  background-color: $base-body-color
+  color: white
+
+@media only screen and (min-width: 1000px)
+  .section-old
+    +font-size(gamma)
+    +vertical-padding(12)
+
+  .section-old--small
+    +vertical-padding(6)
+
+  .section-old__title
+    +font-size(big)
+    +margin-bottom(8)
+
+  .section-old__link
+    +margin-top(2)
+
+  .section-old__text
+    max-width: 85%
+    margin: 0 auto
+    +font-size(gamma)
+    +margin-bottom(3)

@@ -1,0 +1,67 @@
+.window
+  +font-size(regular)
+  box-shadow: $shadow
+  border-radius: 3px
+  font-weight: 500
+  max-width: 550px
+  margin: 0 auto
+  text-align: left
+  background-color: white
+  overflow-wrap: break-word
+  +monospaced-font-family
+
+.window__top
+  border-top-left-radius: 3px
+  border-top-right-radius: 3px
+  // background-color: $green
+  // border-bottom: 1px solid $base-body-color
+  +horizontal-padding(3)
+  +vertical-padding(3)
+  a
+    +margin-right(2)
+
+.window__body
+  +margin-bottom(6)
+  position: relative
+  border-bottom-left-radius: 3px
+  border-bottom-right-radius: 3px
+  pre
+    margin: 0 !important
+    padding-top: 42px !important
+    padding-bottom: 42px !important
+
+
+.window__link
+  @extend .menu__link
+  cursor: pointer
+  font-weight: bold
+
+.window__link.active
+  &:after
+    width: 100%
+
+.window__code
+  border: 3px solid rgba($light-body-color, 0.3)
+  border-radius: 5px
+
+.copy-button
+  +padding(1)
+  +horizontal-padding(1.5)
+  position: absolute
+  top: -22px
+  right: 12px
+  font-weight: bold
+  border-radius: 5px
+  background-color: $yellow
+  &:hover
+    background-color: $yellow
+
+@media only screen and (min-width: 1000px)
+  .window
+    width: 550px
+
+  .window__top
+    +horizontal-padding(5)
+
+  .window__body
+    +margin-bottom(0)

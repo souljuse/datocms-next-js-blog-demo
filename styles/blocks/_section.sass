@@ -1,0 +1,104 @@
+.section
+  text-align: center
+  position: relative
+  background-color: white
+  +font-size(regular)
+  +vertical-padding(6)
+
+.section--small
+  @extend .section
+  +vertical-padding(4)
+
+.section__container
+  +wrap
+  position: relative
+  background: transparent
+
+.section__title
+  position: relative
+  font-weight: 700
+  +font-size(alpha)
+  +heading-font-family
+  max-width: 85%
+  margin: 0 auto
+  background: white
+  border-radius: 10px
+  +margin-bottom(2)
+  +vertical-padding(4)
+  +horizontal-padding(2)
+
+.section__subtitle
+  +font-size(regular)
+  font-weight: regular
+  +body-font-family
+  +margin-top(2)
+
+.section--center
+  text-align: center
+
+.section__text
+  display: inline-block
+  +margin-bottom(2)
+  +font-size(regular)
+  font-weight: regular
+
+.section--gradient
+  @extend .section
+  &::before
+    content: ""
+    transform: skewY(4deg)
+    +position(absolute, 0 0 0 0)
+    background: $light-gradient
+    height: 300px
+
+.section--primary
+  @extend .section
+  &::before
+    content: ""
+    transform: skewY(-4deg)
+    +position(absolute, 0 0 0 0)
+    background: $light-blue-gradient
+    height: 300px
+
+.section--black
+  @extend .section
+  background-color: $base-body-color
+  color: white
+
+@media only screen and (min-width: 1000px)
+  .section
+    +font-size(gamma)
+    +vertical-padding(10)
+
+  .section--gradient
+    @extend .section
+    &::before
+      +position(absolute, 10px 0 0 0)
+      height: 320px
+
+  .section--primary
+    @extend .section
+    &::before
+      +position(absolute, 10px 0 0 0)
+      height: 320px
+
+  .section--small
+    +vertical-padding(6)
+
+  .section__title
+    +font-size(big)
+    +margin-bottom(4)
+    +vertical-padding(4)
+
+
+  .section__subtitle
+    +font-size(gamma)
+
+  .section__link
+    +margin-top(2)
+
+  .section__text
+    max-width: 85%
+    margin: 0 auto
+    +font-size(gamma)
+    +margin-bottom(3)

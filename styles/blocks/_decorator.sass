@@ -1,0 +1,48 @@
+.decorator__chosen
+  display: inline-block
+  position: relative
+  z-index: 0
+  &:before
+    content: ''
+    display: block
+    height: 40%
+    margin: 0 auto
+    position: absolute
+    left: -5px
+    right: -5px
+    bottom: 10px
+    transition: all .5s
+    z-index: -1
+    transform: skewX(10deg)
+
+.decorator__chosen-2
+  display: inline-block
+  position: relative
+  z-index: 0
+  &:before
+    content: 'feedback'
+    display: block
+    background: $gradient
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    margin: 0 auto
+    position: absolute
+    z-index: -1
+    left: -5px
+    right: -16px
+    top: 10px
+
+.decorator__chosen--blue
+  @extend .decorator__chosen
+  &::before
+    background: $green
+
+.decorator__chosen--red
+  @extend .decorator__chosen
+  &::before
+    background: $raspberry
+
+.decorator__chosen--yellow
+  @extend .decorator__chosen
+  &::before
+    background: $yellow

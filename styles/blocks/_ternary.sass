@@ -1,0 +1,50 @@
+.ternary
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  font-weight: 400
+  font-size: 20px
+
+.ternary__item
+  display: flex
+  flex-direction: column
+  text-align: center
+  border-radius: 5px
+  align-items: center
+  background: white
+  +horizontal-padding(3)
+  +vertical-padding(6)
+  box-shadow: $shadow
+  +margin-bottom(6)
+  &:last-child
+    // +margin-bottom(0)
+
+.ternary__title
+  +font-size(alpha)
+  font-weight: bold
+  +margin-bottom(3)
+
+.ternary__text
+  +margin-bottom(3)
+  +font-size(beta)
+  text-align: center
+
+.ternary__subtext
+  +font-size(beta)
+  text-align: center
+
+.ternary__huge
+  +font-size(alpha)
+  font-weight: 700
+  text-align: center
+
+@media only screen and (min-width: 900px)
+  .ternary
+    flex-direction: row
+
+  .ternary__item
+    flex-basis: 33%
+    margin: 0
+    +margin-bottom(3)
+    max-width: 30%
+    box-shadow: none

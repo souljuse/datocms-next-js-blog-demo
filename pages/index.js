@@ -1,12 +1,11 @@
 import Head from "next/head";
 import { renderMetaTags, useQuerySubscription } from "react-datocms";
-import Container from "../components/container";
-import HeroPost from "../components/hero-post";
-import Intro from "../components/intro";
-import Layout from "../components/layout";
-import MoreStories from "../components/more-stories";
-import { request } from "../lib/datocms";
-import { metaTagsFragment, responsiveImageFragment } from "../lib/fragments";
+import Container from "components/container";
+import Cta from "components/cta";
+import Intro from "components/intro";
+import Layout from "components/layout";
+import { request } from "lib/datocms";
+import { metaTagsFragment } from "lib/fragments";
 
 export async function getStaticProps({ preview }) {
   const graphqlRequest = {
@@ -17,34 +16,16 @@ export async function getStaticProps({ preview }) {
             ...metaTagsFragment
           }
         }
-        blog {
+        homePage {
           seo: _seoMetaTags {
             ...metaTagsFragment
-          }
-        }
-        allPosts(orderBy: date_DESC, first: 20) {
-          title
-          slug
-          excerpt
-          date
-          coverImage {
-            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 1000 }) {
-              ...responsiveImageFragment
-            }
-          }
-          author {
-            name
-            picture {
-              url(imgixParams: {fm: jpg, fit: crop, w: 100, h: 100, sat: -100})
-            }
           }
         }
       }
 
       ${metaTagsFragment}
-      ${responsiveImageFragment}
     `,
-    preview,
+    preview
   };
 
   return {
@@ -53,24 +34,22 @@ export async function getStaticProps({ preview }) {
         ? {
             ...graphqlRequest,
             initialData: await request(graphqlRequest),
-            token: process.env.NEXT_EXAMPLE_CMS_DATOCMS_API_TOKEN,
+            token: process.env.NEXT_EXAMPLE_CMS_DATOCMS_API_TOKEN
           }
         : {
             enabled: false,
-            initialData: await request(graphqlRequest),
-          },
-    },
+            initialData: await request(graphqlRequest)
+          }
+    }
   };
 }
 
 export default function Index({ subscription }) {
   const {
-    data: { allPosts, site, blog },
+    data: { site, homePage }
   } = useQuerySubscription(subscription);
 
-  const heroPost = allPosts[0];
-  const morePosts = allPosts.slice(1);
-  const metaTags = blog.seo.concat(site.favicon);
+  const metaTags = homePage.seo.concat(site.favicon);
 
   return (
     <>
@@ -78,17 +57,7 @@ export default function Index({ subscription }) {
         <Head>{renderMetaTags(metaTags)}</Head>
         <Container>
           <Intro />
-          {heroPost && (
-            <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              author={heroPost.author}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
-            />
-          )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+          <Cta />
         </Container>
       </Layout>
     </>

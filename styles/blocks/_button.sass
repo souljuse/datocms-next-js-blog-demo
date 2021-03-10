@@ -1,0 +1,65 @@
+.button
+  display: inline-flex
+  padding: 15px 25px
+  line-height: 1
+  position: relative
+  white-space: nowrap
+  text-decoration: none
+  align-items: center
+  border-radius: 3px
+  cursor: pointer
+  font-size: inherit
+  font-weight: 600
+  background: $gradient
+  box-shadow: $shadow
+  border: 1px solid $base-body-color
+
+.button--big
+  @extend .button
+  padding: 18px 30px
+  font-size: 20px
+
+.button--small
+  @extend .button
+  padding: 12px 22px
+  +font-size(smallprint)
+
+.button--center
+  margin: 0 auto
+  display: inline-block
+
+.button__link
+  &:hover
+    transition: $transition
+    text-decoration: none
+  i
+    margin-left: 5px
+
+.button-label
+  +body-font-family
+  +font-size(regular)
+  font-weight: bold
+  padding: 15px 25px
+  background: $green-gradient
+  background-size: 200%
+  box-shadow: $shadow
+  border-radius: 10px
+  +horizontal-margin(2)
+  text-transform: uppercase
+  background-position: right
+  transition: $transition
+  &:hover
+    background-position: left
+    transition: $transition
+    text-decoration: none
+
+@media only screen and (min-width: 1000px)
+  .button
+    border: 1px solid $base-body-color
+    background: white
+    box-shadow: none
+
+    &:hover
+      transition: $transition
+      background: $gradient
+      box-shadow: $shadow

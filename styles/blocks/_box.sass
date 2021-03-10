@@ -1,0 +1,35 @@
+.box
+  padding: 20px
+  min-width: 200px
+  text-align: center
+
+.box--border
+  @extend .box
+  border: 2px dashed $base-body-color
+
+.box__container
+  +margin-bottom(1)
+
+.box__title
+  +margin-bottom(1)
+  font-weight: 500
+
+.box__button
+  +margin-bottom(3)
+
+.box__buttons
+  word-wrap: no-wrap
+  button
+    +font-size(beta)
+    +padding(1)
+    border-radius: 100%
+    line-height: 12px
+    background-color: aliceblue
+    font-weight: bold
+    +horizontal-margin(0.5)
+
+@media only screen and (min-width: 600px)
+  .box__container
+    display: flex
+    margin-bottom: 0
+    justify-content: center

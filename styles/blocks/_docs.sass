@@ -1,0 +1,100 @@
+.docs
+  text-align: left
+
+.docs__title__container
+  position: relative
+  max-width: 85%
+  margin: 0 auto
+  background: white
+  border-radius: 10px
+  background-color: white
+  +padding(4)
+  +padding-top(6)
+  text-align: center
+
+.docs__title
+  @extend .page__title
+  +margin-bottom(0)
+
+.docs__text
+  +font-size(regular)
+  font-weight: regular
+
+.docs__link
+  +margin-top(1)
+  display: inline-block
+  font-weight: bold
+  font-family: $heading-font-family
+  position: relative
+  text-decoration: none
+  z-index: 0
+  &:after
+    content: ''
+    display: block
+    background-color: $green
+    height: 30%
+    margin: 0 auto
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 20%
+    z-index: -1
+    transform: skewX(10deg)
+    transition: $transition
+    width: 0%
+
+  &:hover
+    &:after
+      width: 100%
+
+.docs__image
+  max-width: 50%
+
+.docs__portrait
+  max-width: 50%
+  border-radius: 3px 50%
+
+.docs--button
+  @extend .docs
+  background-color: $button-color
+
+.docs--primary
+  @extend .docs
+  background-color: $primary-color
+  color: white
+
+.docs--black
+  @extend .docs
+  background-color: $base-body-color
+  color: white
+
+.swagger-ui
+  .wrapper
+    padding: 0
+  .info
+    margin: 0
+  a.nostyle
+    +font-size(gamma)
+    font-weight: bold
+
+@media only screen and (min-width: 1000px)
+  .docs
+    +font-size(gamma)
+
+  .docs__container
+    padding: 100px 0
+    max-width: 950px
+
+  .docs__title
+    +font-size(big)
+    +padding(4)
+
+
+  .docs__link
+    +margin-top(2)
+
+  .docs__text
+    max-width: 85%
+    margin: 0 auto
+    +font-size(gamma)
+    +margin-bottom(3)

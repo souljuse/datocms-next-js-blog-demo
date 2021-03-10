@@ -1,0 +1,118 @@
+.markdown
+  position: relative
+  +font-size(gamma)
+  max-width: 900px
+  margin: 0 auto
+
+  h1, h2, h3, h4, h5
+    +heading-font-family
+
+  h1
+    font-weight: bold
+    +font-size(alphaplus)
+    +margin-top(5)
+    +margin-bottom(4)
+
+  h3
+    +font-size(alphaplus)
+    font-weight: 700
+    +margin-top(5)
+    +margin-bottom(3)
+
+  h4
+    +font-size(alphaplus)
+    font-weight: 700
+    +margin-top(5)
+    +margin-bottom(3)
+
+  h5
+    +font-size(alpha)
+    font-weight: 700
+    +margin-top(4)
+    +margin-bottom(2)
+
+  h6
+    +font-size(gamma)
+    +margin-top(2)
+    +margin-bottom(1)
+    font-weight: 700
+
+  p
+    +margin-bottom(4)
+    line-height: 1.7
+
+  a
+    font-weight: 500
+    
+  pre
+    +margin-bottom(6)
+    +margin-top(2)
+    border-radius: 3px
+    background-color: #282936
+    +horizontal-padding(2)
+    +vertical-padding(4)
+
+  ul, ol, blockquote
+    padding-left: 40px
+    +margin-bottom(4)
+
+  li
+    list-style-type: disc
+    +margin-bottom(2)
+
+  video
+    +margin-bottom(4)
+    width: 100%
+    box-shadow: 2px 14px 15px #ddd
+
+  strong
+    font-weight: 600
+
+  iframe
+    +vertical-margin(4)
+
+  quote
+    +heading-font-family
+
+  .center
+    text-align: center
+    +margin-bottom(4)
+
+  .flex
+    display: flex
+    align-items: center
+    justify-content: center
+    +margin-bottom(4)
+    +margin-bottom(4)
+  .flex > *
+    margin: 0
+    +horizontal-margin(2)
+
+  .big
+    +font-size(big)
+
+  .huge
+    +font-size(huge)
+
+  .inline-buttons
+    +font-size(milli)
+
+.language-html
+  overflow: scroll
+
+
+@media only screen and (max-width: 1000px)
+  .markdown
+    .big
+      +font-size(alpha)
+
+    .huge
+      +font-size(big)
+
+@media only screen and (max-width: 500px)
+  .markdown
+    .big
+      +font-size(beta)
+
+    .huge
+      +font-size(big)

@@ -1,0 +1,37 @@
+.menu
+  display: flex
+  justify-content: center
+  align-items: center
+  +margin-bottom(6)
+  span
+    +horizontal-margin(2)
+
+.menu__link
+  position: relative
+  z-index: 0
+  text-decoration: none
+  text-transform: uppercase
+  &:after
+    content: ''
+    display: block
+    background-color: $base-body-color
+    height: 1px
+    margin: 0 auto
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: -1
+    transition: $transition
+    width: 0%
+
+  &:hover, .menu__link.active
+    text-decoration: none
+    &:after
+      width: 100%
+
+.menu__link.active
+  &:after
+    width: 100%
+
+@media only screen and (min-width: 1000px)
