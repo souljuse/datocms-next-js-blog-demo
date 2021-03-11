@@ -25,6 +25,7 @@ export async function getStaticProps({ preview }) {
               answer(markdown: true)
             }
           }
+          seoKeywords
           seo: _seoMetaTags {
             ...metaTagsFragment
           }
@@ -61,7 +62,10 @@ export default function Index({ subscription }) {
 
   return (
     <Layout preview={subscription.preview}>
-      <Head>{renderMetaTags(metaTags)}</Head>
+      <Head>
+        {renderMetaTags(metaTags)}
+        <meta name="keywords" content={homePage.seoKeywords} />
+      </Head>
       <Container>
         <section className="header">
           <div>
@@ -94,7 +98,8 @@ export default function Index({ subscription }) {
             <Cta />
           </div>
         </section>
-        {homePage.content && homePage.content.map(qa => <QAndA qa={qa} />)}
+        {homePage.content &&
+          homePage.content.map((qa, i) => <QAndA qa={qa} index={i} />)}
       </Container>
     </Layout>
   );
