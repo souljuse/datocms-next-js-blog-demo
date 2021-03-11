@@ -1,10 +1,14 @@
+import Date from "components/date";
+
 export default function Cta() {
   return (
     <div className="half">
       <div>
+        <Date dateString={"2021-03-12T14:07:45.265Z"} />
         <h4 className="half__title">Join the waitlist!</h4>
         <p className="half__text">
-          Leave your email to be notified as soon as AiMUG is available
+          AiMUG is not available yet but it will be shortly! Leave your email to
+          be notified as soon as AiMUG is available.
         </p>
       </div>
       <div className="eform__container">
