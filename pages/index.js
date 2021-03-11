@@ -89,7 +89,11 @@ export default function Index({ subscription }) {
             </Typist>
           </div>
         </section>
-        <Cta />
+        <section className="section">
+          <div className="window">
+            <Cta />
+          </div>
+        </section>
         {homePage.content && homePage.content.map(qa => <QAndA qa={qa} />)}
       </Container>
     </Layout>

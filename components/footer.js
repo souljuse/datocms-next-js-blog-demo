@@ -5,7 +5,9 @@ export default function Footer() {
   return (
     <footer className="footer">
       <Container>
-        <Cta />
+        <section className="section">
+          <Cta />
+        </section>
       </Container>
     </footer>
   );

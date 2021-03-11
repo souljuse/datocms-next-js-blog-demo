@@ -11,26 +11,29 @@
   input, select
     position: relative
     border: none
-    border-radius: 3px
-    background-color: $light-bg-color
+    background-color: $white
     padding: 0.7rem 1rem
     flex: 1
 
   button[type=submit]
-    border: none
-    border-left:  2px solid $base-body-color
-    border-radius: 0
+    border: 1px solid $base-body-color
     cursor: pointer
     background-color: $base-body-color
-    color: white
+    color: $white
     +font-size(smallprint)
     font-weight: 500
     +horizontal-padding(2)
     &:hover
-      background-color: $raspberry
+      color: $base-body-color
+      background-color: $white
       transition: $transition
 
 // desktop first
 @media only screen and (max-width: 1000px)
   .eform__container
     text-align: center
+
+// desktop first
+@media only screen and (max-width: 600px)
+  .eform
+    flex-direction: column
