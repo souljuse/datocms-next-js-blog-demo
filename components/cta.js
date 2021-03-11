@@ -8,8 +8,19 @@ export default function Cta() {
         </p>
       </div>
       <div className="eform__container">
-        <form className="eform">
-          <input type="text" />
+        <form
+          className="eform"
+          name="waiting-list"
+          method="POST"
+          data-netlify="true"
+        >
+          <input type="hidden" name="form-name" value="waiting-list" />
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="myemail@mail.com"
+          />
           <button type="submit">Submit</button>
         </form>
       </div>
