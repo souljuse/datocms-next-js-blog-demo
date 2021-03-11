@@ -8,8 +8,9 @@ export default function Cta() {
           </h4>
         </div>
         <div>
-          <form>
+          <form className="search">
             <input type="text" />
+            <button type="submit">Submit</button>
           </form>
         </div>
       </div>

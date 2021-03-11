@@ -1,10 +1,10 @@
 export default async (req, res) => {
-  // Please set the NEXT_EXAMPLE_CMS_DATOCMS_PREVIEW_SECRET env variable
+  // Please set the NEXT_DATOCMS_API_TOKEN_PREVIEW env variable
   // on Vercel/Netlify, or everyone will be able to enter Preview Mode and
   // see draft content!
 
   const secret =
-    process.env.NEXT_EXAMPLE_CMS_DATOCMS_PREVIEW_SECRET;
+    process.env.NEXT_DATOCMS_API_TOKEN_PREVIEW;
 
   // Check the secret and next parameters
   if (secret && req.query.secret !== secret) {
