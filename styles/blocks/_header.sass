@@ -3,9 +3,6 @@
   +padding-bottom(10)
   position: relative
 
-.header__container
-  +wrap
-
 .header__title
   +heading-font-family
   +font-size(bigger)
@@ -32,9 +29,6 @@
   text-align: left
   max-width: 40%
 
-.header__image
-  display: none
-
 @media only screen and (min-width: 900px)
   .header
     +padding-top(12)
@@ -47,7 +41,9 @@
   .header__subtitle
     +font-size(alpha)
 
+@media only screen and (max-width: 600px)
+  .header__title
+    max-width: none
 
-  .header__image
-    display: block
-    width: 100px
+  .header__subtitle
+    max-width: none

@@ -17,3 +17,16 @@
 .q-a__answer
   width: 60%
   +body-font-family
+
+// desktop first
+@media only screen and (max-width: 600px)
+  .q-a
+    display: flex
+    flex-direction: column
+
+  .q-a__question
+    width: auto
+    +margin-bottom(2)
+
+  .q-a__answer
+    width: auto
