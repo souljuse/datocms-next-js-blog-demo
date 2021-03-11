@@ -57,8 +57,6 @@ export default function Index({ subscription }) {
     data: { site, homePage }
   } = useQuerySubscription(subscription);
 
-  console.log(homePage.content.map(qa => <QAndA qa={qa} />));
-
   const metaTags = homePage.seo.concat(site.favicon);
 
   return (

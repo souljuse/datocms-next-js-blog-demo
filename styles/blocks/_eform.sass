@@ -1,10 +1,12 @@
+.eform__container
+  justify-content: flex-end
+  text-align: right
+
 .eform
   display: inline-flex
   font-family: $heading-font-family
   font-weight: 400
   max-width: 100%
-  justify-content: flex-end
-  width: 50%
 
   input, select
     position: relative
@@ -28,7 +30,7 @@
       background-color: $raspberry
       transition: $transition
 
-@media only screen and (min-width: 1000px)
-  .eform
-    input, select
-      flex: 1
+// desktop first
+@media only screen and (max-width: 1000px)
+  .eform__container
+    text-align: center
