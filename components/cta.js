@@ -1,6 +1,6 @@
 export default function Cta() {
   return (
-    <section>
+    <section className="section">
       <div className="half">
         <h4 className="half__title">
           <p>Leave your email to join the waitlist</p>

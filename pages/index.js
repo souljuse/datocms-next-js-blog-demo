@@ -74,10 +74,8 @@ export default function Index({ subscription }) {
           </div>
           <div className="text-6xl">{"{}"}</div>
         </section>
-        <section>
-          {homePage.content && homePage.content.map(qa => <QAndA qa={qa} />)}
-        </section>
         <Cta />
+        {homePage.content && homePage.content.map(qa => <QAndA qa={qa} />)}
       </Container>
     </Layout>
   );
