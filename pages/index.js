@@ -2,9 +2,9 @@ import Head from "next/head";
 import { renderMetaTags, useQuerySubscription } from "react-datocms";
 import Container from "components/container";
 import Cta from "components/cta";
-import Intro from "components/intro";
 import QAndA from "components/QAndA";
 import Layout from "components/layout";
+import Typist from "react-typist";
 import { request } from "lib/datocms";
 import { metaTagsFragment } from "lib/fragments";
 
@@ -70,9 +70,26 @@ export default function Index({ subscription }) {
             <h1 className="header__title">
               <span>AiMug</span> Schema Markup Generator
             </h1>
-            <h2 className="text-lg">{homePage.subtitle}</h2>
+            <h2 className="header__subtitle">{homePage.subtitle}</h2>
           </div>
-          <div className="text-6xl">{"{}"}</div>
+
+          <div className="typing">
+            <Typist cursor={{ show: false }}>
+              <p className="typing__brackets">{"{"}</p>
+              <Typist.Delay ms={500} />
+              <p className="typing__text">"@context" : "http://schema.org",</p>
+              <Typist.Delay ms={1000} />
+              <p className="typing__text">"@type" : "Product",</p>
+              <Typist.Delay ms={500} />
+              <p className="typing__text">"name" : "AiMUG",</p>
+              <Typist.Delay ms={1000} />
+              <p className="typing__text">
+                "description" : "Safely generate the perfect schema markup",
+              </p>
+              <Typist.Delay ms={1000} />
+              <p className="typing__brackets">{"}"}</p>
+            </Typist>
+          </div>
         </section>
         <Cta />
         {homePage.content && homePage.content.map(qa => <QAndA qa={qa} />)}

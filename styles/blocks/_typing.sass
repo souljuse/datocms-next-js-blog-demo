@@ -1,0 +1,25 @@
+.typing
+  +position(absolute, 50% 0 auto auto)
+  +heading-font-family
+  width: 45%
+  +padding(2)
+  background-color: $light-bg-color
+  height: 255px
+
+.typing__brackets
+  +font-size(beta)
+
+.typing__text
+  +margin-left(4)
+  +font-size(gamma)
+
+// desktop first
+@media only screen and (max-width: 900px)
+  .typing
+    height: 230px
+
+  .typing__text
+    +font-size(regular)
+
+  .typing__brackets
+    +font-size(gamma)

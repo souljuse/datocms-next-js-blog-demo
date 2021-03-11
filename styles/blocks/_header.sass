@@ -1,16 +1,17 @@
 .header
   +padding-top(10)
   +padding-bottom(10)
+  position: relative
 
 .header__container
   +wrap
 
 .header__title
   +heading-font-family
-  +font-size(big)
+  +font-size(bigger)
   text-align: center
   font-weight: 700
-  max-width: 420px
+  max-width: 490px
   +margin-bottom(3)
   line-height: 1em
   text-align: left
@@ -25,28 +26,26 @@
       color: $peach
 
 .header__subtitle
-  text-align: center
-  +font-size(regular)
-  margin: 0 auto
-  max-width: 420px
-  +margin-bottom(3)
+  +font-size(alpha)
+  line-height: 1em
+  letter-spacing: -1.4px
+  text-align: left
+  max-width: 40%
 
 .header__image
   display: none
 
-@media only screen and (min-width: 1000px)
+@media only screen and (min-width: 900px)
   .header
     +padding-top(12)
     +padding-bottom(6)
 
   .header__title
     +font-size(huge)
-    max-width: 720px
+    max-width: 680px
 
   .header__subtitle
     +font-size(alpha)
-    max-width: 620px
-    +margin-bottom(5)
 
 
   .header__image
